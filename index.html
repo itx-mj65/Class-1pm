@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Gradients – All Types & Subtypes</title>
+    <style>
+        :root {
+            --bg: #0f1115;
+            --panel: #161a22;
+            --text: #e6e9ef;
+            --muted: #98a2b3;
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+            background: radial-gradient(1200px 800px at 20% -10%, #1a2131, transparent 60%),
+                radial-gradient(1000px 700px at 120% 10%, #1e2433, transparent 65%),
+                var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            padding: 2.5rem 1rem 1rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            margin: 0 0 .5rem;
+            letter-spacing: .2px;
+        }
+
+        p.lead {
+            margin: 0 auto;
+            max-width: 900px;
+            color: var(--muted);
+        }
+
+        .section {
+            margin: 2rem auto 3rem;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+
+        .section h2 {
+            font-size: 1.25rem;
+            margin: 0 0 1rem;
+            color: #cbd5e1;
+            letter-spacing: .2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--panel);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .04);
+            padding: 12px;
+        }
+
+        .demo {
+            height: 140px;
+            border-radius: 12px;
+            outline: 1px solid rgba(255, 255, 255, .06);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+        }
+
+        .label {
+            margin-top: .75rem;
+            font-size: .9rem;
+            color: #d1d5db;
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            align-items: baseline;
+        }
+
+        .sub {
+            color: var(--muted);
+            font-size: .78rem;
+        }
+
+        /* ===== Linear Gradients ===== */
+        .linear-basic {
+            background: linear-gradient(to right, #ff7a7a, #7aa8ff);
+        }
+
+        .linear-vertical {
+            background: linear-gradient(to bottom, #34d399, #3b82f6);
+        }
+
+        .linear-angle {
+            background: linear-gradient(45deg, #f472b6, #8b5cf6);
+        }
+
+        .linear-multi {
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e, #3b82f6, #8b5cf6);
+        }
+
+        .linear-transparency {
+            background: linear-gradient(135deg, rgba(236, 72, 153, .9), rgba(59, 130, 246, 0));
+        }
+
+        .linear-hard-stops {
+            background: linear-gradient(90deg, #22c55e 0 33%, #f59e0b 33% 66%, #ef4444 66% 100%);
+        }
+
+        .repeating-linear {
+            background: repeating-linear-gradient(45deg, #3b82f6 0 10px, #1d4ed8 10px 20px, #0ea5e9 20px 30px);
+        }
+
+        /* ===== Radial Gradients ===== */
+        .radial-circle {background: radial-gradient(circle, red, blue);
+
+        }
+
+        .radial-ellipse {
+           background: radial-gradient(ellipse, red, blue);
+
+        }
+
+        .radial-size-closest-side {
+            background: radial-gradient(circle closest-side, red, blue);
+        }
+
+        .radial-size-farthest-corner {
+            background: radial-gradient(circle farthest-corner, red, blue);
+        }
+
+        .radial-position {
+            background: radial-gradient(circle at 50% 50%, #fde047, #f97316, #ef4444);
+        }
+
+        .repeating-radial {
+            background: repeating-radial-gradient(circle, #e879f9 0 12px, #a855f7 12px 24px, #6d28d9 24px 36px);
+        }
+
+        /* ===== Conic Gradients ===== */
+        .conic-basic {
+            background: conic-gradient(#ef4444, #f59e0b, #22c55e, #3b82f6, #8b5cf6, #ef4444);
+        }
+
+        .conic-from-angle {
+            background: conic-gradient(from 45deg, #f472b6, #22d3ee, #34d399, #f472b6);
+        }
+
+        .conic-at-position {
+            background: conic-gradient(at 70% 30%, #22c55e, #3b82f6, #a78bfa, #22c55e);
+        }
+
+        .conic-hard-stops {
+            background: conic-gradient(#ef4444 0deg 120deg, #22c55e 120deg 240deg, #3b82f6 240deg 360deg);
+        }
+
+        .repeating-conic {
+            background: repeating-conic-gradient(from 0deg, #0ea5e9 0 15deg, #22d3ee 15deg 30deg);
+        }
+
+        /* ===== Advanced / Practical ===== */
+        .layered-gradients {
+            background:
+                radial-gradient(600px 200px at 20% -20%, rgba(255, 255, 255, .18), transparent 60%),
+                linear-gradient(135deg, #1f2937, #0b1220);
+        }
+
+        .gradient-border {
+            --g: conic-gradient(from 180deg at 50% 50%, #22d3ee, #a78bfa, #22c55e, #22d3ee);
+            background:
+                var(--g) padding-box,
+                var(--g) border-box;
+            border: 4px solid transparent;
+        }
+
+        .gradient-text {
+            display: grid;
+            place-items: center;
+            background: linear-gradient(90deg, #f43f5e, #f59e0b, #10b981, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: .5px;
+        }
+
+        .image-overlay {
+            background:
+                linear-gradient(0deg, rgba(2, 6, 23, 0.75), rgba(2, 6, 23, 0.1)),
+                url('https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop') center/cover;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 2rem 1rem 3rem;
+        }
+
+        code {
+            background: rgba(255, 255, 255, .06);
+            padding: 2px 6px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CSS Gradients – Types & Subtypes</h1>
+        <p class="lead">A compact gallery of <b>linear</b>, <b>radial</b>, and <b>conic</b> gradients, including
+            <i>repeating</i> variants, angle/direction controls, size/positioning, transparency, and practical patterns
+            like gradient text, borders, and overlays.</p>
+    </header>
+
+    <main>
+        <!-- LINEAR -->
+        <section class="section">
+            <h2>Linear Gradients</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="demo linear-basic"></div>
+                    <div class="label"><span>Basic (to right)</span><span
+                            class="sub"><code>linear-gradient(to right, ...)</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo linear-vertical"></div>
+                    <div class="label"><span>Vertical</span><span class="sub"><code>to bottom</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo linear-angle"></div>
+                    <div class="label"><span>Angle</span><span class="sub"><code>45deg</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo linear-multi"></div>
+                    <div class="label"><span>Multiple stops</span><span class="sub">5 colors</span></div>
+                </div>
+                <div class="card">
+                    <div class="demo linear-transparency"></div>
+                    <div class="label"><span>Transparency</span><span class="sub"><code>rgba(..., 0)</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo linear-hard-stops"></div>
+                    <div class="label"><span>Hard stops</span><span class="sub"><code>0% 33% / 33% 66%</code></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="demo repeating-linear"></div>
+                    <div class="label"><span>Repeating</span><span
+                            class="sub"><code>repeating-linear-gradient</code></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RADIAL -->
+        <section class="section">
+            <h2>Radial Gradients</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="demo radial-circle"></div>
+                    <div class="label"><span>Circle</span><span class="sub"><code>circle</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo radial-ellipse"></div>
+                    <div class="label"><span>Ellipse</span><span class="sub"><code>ellipse</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo radial-size-closest-side"></div>
+                    <div class="label"><span>Closest side</span><span class="sub"><code>closest-side</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo radial-size-farthest-corner"></div>
+                    <div class="label"><span>Farthest corner</span><span class="sub"><code>farthest-corner</code></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="demo radial-position"></div>
+                    <div class="label"><span>Position</span><span class="sub"><code>at 70% 30%</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo repeating-radial"></div>
+                    <div class="label"><span>Repeating</span><span
+                            class="sub"><code>repeating-radial-gradient</code></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONIC -->
+        <section class="section">
+            <h2>Conic Gradients</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="demo conic-basic"></div>
+                    <div class="label"><span>Basic</span><span class="sub"><code>conic-gradient(...)</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo conic-from-angle"></div>
+                    <div class="label"><span>From angle</span><span class="sub"><code>from 45deg</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo conic-at-position"></div>
+                    <div class="label"><span>At position</span><span class="sub"><code>at 70% 30%</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo conic-hard-stops"></div>
+                    <div class="label"><span>Hard stops</span><span class="sub"><code>0–120–240–360°</code></span></div>
+                </div>
+                <div class="card">
+                    <div class="demo repeating-conic"></div>
+                    <div class="label"><span>Repeating</span><span
+                            class="sub"><code>repeating-conic-gradient</code></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRACTICAL PATTERNS -->
+        <section class="section">
+            <h2>Practical Patterns</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="demo layered-gradients"></div>
+                    <div class="label"><span>Layered</span><span class="sub">radial on linear</span></div>
+                </div>
+                <div class="card">
+                    <div class="demo gradient-border"></div>
+                    <div class="label"><span>Gradient border</span><span class="sub">conic + transparent border</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="demo gradient-text">Gradient Text</div>
+                    <div class="label"><span>Text fill</span><span class="sub"><code>background-clip: text</code></span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="demo image-overlay"></div>
+                    <div class="label"><span>Image overlay</span><span class="sub">linear overlay + image</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Tip: Use <code>at x y</code>, <code>from &lt;angle&gt;</code>, and size keywords like <code>closest-side</code>
+        / <code>farthest-corner</code> to control shape and spread. Try <code>rgba()</code> or <code>transparent</code>
+        for fades.
+    </footer>
+</body>
+
+</html>

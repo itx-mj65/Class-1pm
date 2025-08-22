@@ -1,0 +1,28 @@
+.main{
+    height: 400px;
+    width: 100%;
+    background-color: yellow;
+}
+
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+@media only screen and (min-width:400px) and (max-width:600px) {
+    .main{
+        background-color: green;
+    }
+    .box{
+        display: none;
+    }
+}
+@media only screen and (min-width:601px) and (max-width:800px){
+    .main{
+        background-color: blue;
+    }
+    .box{
+        height: 200px;
+        width: 200px;
+    }
+}

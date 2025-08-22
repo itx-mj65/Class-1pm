@@ -1,0 +1,17 @@
+.box {
+    height: 250px;
+    width: 400px;
+    border: 2px solid black;
+    /* background: linear-gradient(90deg, red 0% 33%, green 33% 66%, blue 66% 100%); */
+
+    /* background: repeating-radial-gradient(ellipse, red 0% 33%, blue 33% 66%); */
+    /* background: conic-gradient( at 70% 40%,  grey 0deg 120deg, red 120deg 240deg, blue 240deg 360deg); */
+
+    background: repeating-conic-gradient( at 49px 40px,  grey 0deg 20deg, red 20deg 40deg, blue 40deg 60deg);
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

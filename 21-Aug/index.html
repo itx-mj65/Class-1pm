@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        a:link {
+            color: #FF0000;
+        }
+
+        /* visited link */
+        a:visited {
+            color: #00FF00;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: #FF00FF;
+        }
+
+        /* selected link */
+        a:active {
+            color: #0000FF;
+        }
+
+        li:hover {
+            background-color: yellow;
+            font-size: 20px;
+            transition: 0.5s all;
+        }
+
+        li:lang(en) {
+            background-color: red;
+            font-size: 22px;
+            transition: 0.5s all;
+        }
+
+        input:focus {
+            background-color: yellow;
+            font-size: 20px;
+            transition: 0.5s all;
+            
+        }
+        input:disabled {
+            background-color: lightgray;
+            color: darkgray;
+        }
+
+        li:nth-child(4){
+            transform: translate(-40px , -40px);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <input type="text" disabled>
+    <input type="text" >
+    <input type="text" disabled>
+
+    <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">Click me </a>
+ <div>
+       <li>item $1</li>
+    <li>item $2</li>
+ </div>
+    <ul>
+        <li>item $1</li>
+        <li lang="en">item $2</li>
+        <li>item $3</li>
+        <li lang="un">item $4</li>
+        <li>item $5</li>
+        <li>item $6</li>
+        <li>item $7</li>
+    </ul>
+
+    <li>item $1</li>
+    <li>item $2</li>
+</body>
+
+</html>

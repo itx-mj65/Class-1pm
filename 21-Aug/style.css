@@ -1,0 +1,25 @@
+.background{
+    padding: 20px;
+    background-image: url("./download.jpeg");
+    border-radius: 5px;
+    height: 70vh;
+    background-repeat: repeat-y;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    
+    background-position: center;
+    color: white;
+}
+
+
+.hello{
+    background-color: blue;
+    font-size: 19px;
+    color: white;
+}
+
+.world{
+    background-color: green;
+    font-size: 19px;
+    color: white;
+}

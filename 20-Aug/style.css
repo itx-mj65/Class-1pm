@@ -1,0 +1,25 @@
+.box {
+    width: 100px;
+    margin-top: 70px;
+    margin-left: 160px;
+    height: 100px;
+    background-color: red;
+    /* animation-name: example;
+    animation-duration: 2s; */
+    /* animation-delay: 2s; */
+    /* animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out; */
+    animation: example 5s 2s alternate ease-in;
+
+}
+
+
+@keyframes example {
+    
+
+    100% {
+        background-color: rgb(179, 131, 131);
+        transform: translateX(440px);
+    }
+}
